@@ -7,7 +7,7 @@
     },
     "frontend": {
       "type": "assets",
-      "dependencies": ["backend"],
+      "dependencies": ["backend", "internet_identity"],
       "source": ["src/frontend/dist"],
       "workspace": "icp-frontend-project-1-frontend"
     },
