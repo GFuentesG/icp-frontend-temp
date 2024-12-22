@@ -1,0 +1,128 @@
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px; /* Aumentamos el gap entre los inputs */
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* ancho completo en pq pant */
+    max-width: 48%; /* dos columna en gd pant */
+    box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño */
+  }
+  
+  .formGroup.message {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 100%; /* Asegura que no se limite el ancho */
+  }
+  
+  .formGroup label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .formGroup input, 
+  .formGroup textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    width: 100%; /* Asegura que el campo de input ocupe todo el ancho disponible */
+    box-sizing: border-box;
+  }
+  
+  .formGroup input:focus, 
+  .formGroup textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .submitButton {
+    background-color: #007bff;
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+  }
+  
+  .submitButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); 
+  }
+  
+  .submitButton:active {
+    transform: translateY(1px); 
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  
+  .summary {
+    padding-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .summary p {
+    margin-bottom: 8px;
+  }
+  
+  /* Ajustar los márgenes de los títulos */
+  .title {
+    margin-top: 0px; /* Reducimos el espacio superior */
+    margin-bottom: 40px; /* Reducimos el espacio inferior */
+    text-align: center;
+  }
+  
+  .subtitle {
+    margin-top: 5px; /* Reducimos el espacio superior */
+    margin-bottom: 0px; /* Reducimos el espacio inferior */
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .formGroup {
+      width: 100%; /* Los campos ocuparán el 100% del ancho disponible */
+      margin: auto; /* Centrado de los campos */
+    }
+  
+    .formGroup input, 
+    .formGroup textarea {
+      width: 100%; /* Asegura que los inputs ocupen todo el ancho del contenedor */
+    }
+  
+    .submitButton {
+      width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+      margin: 0 auto;
+    }
+  }

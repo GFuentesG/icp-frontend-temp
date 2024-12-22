@@ -1,0 +1,53 @@
+.aboutWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .content {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #444;
+  }
+  
+  .featureList {
+    list-style-type: disc;
+    margin-left: 0;
+    padding-left: 20px;
+    max-width: 66%;  /* Hace que la lista sea más angosta */
+    margin: 0 auto;  /* Centra la lista */
+    text-align: left;
+  }
+  
+  .featureList li {
+    margin-bottom: 10px;
+  }
+  
+ 
+ 
