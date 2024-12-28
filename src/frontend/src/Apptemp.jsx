@@ -2,11 +2,13 @@ import LoginButton from './components/auth/LoginButton';
 import LogoutButton from './components/auth/LogoutButton';
 import { useContext, useEffect, useState, useRef } from 'react';
 import { AuthContext } from './context/AuthContext';
+//enviado a Home
 import { createActor } from '../../declarations/backend';
+
 import CartItem from './components/cart-item/cartitem';
 import OpenChatFrame from "./components/OpenChatFrame";
 
-import ProductList from './components/ProductList';
+import ProductList from './components/productlist/ProductList';
 import CartModal from './components/CartModal';
 //import CheckoutForm from './components/CheckoutForm';
 import CheckoutModal from './components/CheckoutModal';
@@ -22,6 +24,7 @@ function Apptemp() {
 
   const { isAuthenticated, identity } = useContext(AuthContext);
   
+  //enviado a Home
   const [products, setProducts] = useState([]);
 
   const [cartItems, setCartItems] = useState([]);
@@ -72,7 +75,7 @@ function Apptemp() {
     };
 }, []);
 
-
+//enviado a Home.jsx
   let canisterId = process.env.CANISTER_ID_BACKEND //REACT_APP_BACKEND_CANISTER_ID;
 
   let backend = createActor(canisterId, {
@@ -90,6 +93,7 @@ function Apptemp() {
       }
   };
 
+  //enviado a Home
   // Cuando se autentica, carga el carrito actualizado
   useEffect(() => {
     getProducts();
@@ -124,6 +128,7 @@ function Apptemp() {
     }
   }, [confirmationMessage]);
 
+  //enviado a home
   // funcion para mostrar todos los productos disponibles
   async function getProducts(){
     try {

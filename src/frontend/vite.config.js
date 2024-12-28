@@ -27,6 +27,9 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
+    // headers: {
+    //   'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; connect-src 'self' http://localhost:* https://icp0.io https://*.icp0.io https://icp-api.io; img-src 'self' data: http://dummy-images.com/; style-src * 'unsafe-inline'; style-src-elem * 'unsafe-inline'; font-src *; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests;",
+    // },
   },
   plugins: [
     react(),
