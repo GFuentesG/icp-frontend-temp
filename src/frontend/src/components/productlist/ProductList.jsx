@@ -1,7 +1,11 @@
 import React from "react";
 import styles from './ProductList.module.css';
+import { useCart } from '../../context/CartContext';
 
  const ProductList = ({ products}) => {
+
+  const { addToCart } = useCart();
+  
     return (
         <ul className={styles.productlist}>
           {products.map((product) => (

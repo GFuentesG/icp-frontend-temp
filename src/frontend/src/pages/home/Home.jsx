@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import ProductList from '../../components/productlist/ProductList';
 import { createActor } from '../../../../declarations/backend';
 
+
 export const Home = () => {
 
   const [products, setProducts] = useState([]);

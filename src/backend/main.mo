@@ -32,6 +32,11 @@ actor {
     let cartIter = cart.vals();
     let cartArray = Iter.toArray<Types.CartItem>(cartIter);
 
+    // Ordena por timestamp (del más reciente al más antiguo)
+    // let sortedCart = Array.sort(cartArray, func(a, b) {
+    //   return Int.compare(a.timestamp, b.timestamp);  //return a.product.id - b.product.id; Ej orden por ID
+    // });
+
     return #ok(cartArray);
   };
 
@@ -53,14 +58,14 @@ actor {
     
     switch ((maybeProduct, maybeProductInCart)) {
       case (?product, null) {
-        let cartItem = { product = product; quantity = quantity };
+        let cartItem = { product = product; quantity = quantity }; //se podria agregar timestamp = time.now() y en type.mo en type CartItem agregar: timestamp: Int;
 
         cart.put(itemId, cartItem);
 
         return #ok();
       };
       case (?product, ?cartItem) {
-        let newItem = { cartItem with quantity = cartItem.quantity + quantity };
+        let newItem = { cartItem with quantity = cartItem.quantity + quantity }; //tambien se podria agregar: ;timestamp= Time.now() para actualizar el tiempo
         
         cart.put(itemId, newItem);
 
