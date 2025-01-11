@@ -1,8 +1,9 @@
-import React , { useState, useEffect, useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useCart } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
 
 import CartItem from "../../components/cart-item/cartitem";
+import styles from "./Cart.module.css";
 import CartModal from "../../components/CartModal";
 
 export const Cart = () => {
@@ -33,58 +34,59 @@ export const Cart = () => {
 
   return (
     <>
-    {/* <CartModal /> */}
-    <div className="cart-modal">
-              <div className="cart-header">
-              <h2>Tu carrito</h2>
-              {<button >X</button> }
-              </div>
-              <ul className="cart-list">
-                {cart.map((item) => (
-                  // <li className="cart-item" key={index}>
-                  //   <img src={item.product.image} alt={item.product.name} />
-                  //   <h3>{item.product.name}</h3>
-                  //   <p>{item.product.description}</p>
-                  //   <p>Quantity: {item.quantity}</p>
-                  //   <p>Price: ${item.product.price}</p>
-                  // </li>
-                  <CartItem
-                  key={item.product.id} //item.product.id   index
-                  product={item.product}  
-                  quantity={item.quantity}
-                  onIncrement={() => updateQuantity(item.product.id, item.quantity + 1)}
-                  onDecrement={() => updateQuantity(item.product.id, item.quantity - 1)}
-                    />
-                ))}
-              </ul>
-              <p><strong>Total: ${totalPrice.toFixed(2)}</strong></p>
-              <button >Continuar comprando</button>
-              <br></br>
-              <br></br>
-              <button onClick={() => {
-                console.log("Botón 'Ir a pagar' clickeado");
-                //setIsFormVisible(true);
-  
-                // *** Desplazar la vista hacia el formulario
-                // if (formRef.current) {
-                //   formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Desplazarse suavemente
-                // }
-
-                // Cerrar el carrito
-                // toggleCartVisibility(); //*** Agregamos el cierre del carrito
-
-                // Mostrar el formulario de pago
-                // setIsFormVisible(true); //*** Mostramos el formulario
-  
-                // setTimeout(() => {
-                //   if (formRef.current) {
-                //     formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Desplazarse suavemente
-                //   }
-                // }, 200); // *** Ajustar el tiempo si es necesario
-  
-              }}>Ir a pagar</button> 
-              
+      {/* <CartModal /> */}
+      <div className={styles.cartmodal}>
+        <div className={styles.cartheader}>
+          <h2 className={styles.cartheaderh2}>Tu carrito</h2>
+          {<button className={styles.cartheaderbutton}>X</button>}
         </div>
+        <ul className="cart-list">
+          {cart.map((item) => (
+            // <li className="cart-item" key={index}>
+            //   <img src={item.product.image} alt={item.product.name} />
+            //   <h3>{item.product.name}</h3>
+            //   <p>{item.product.description}</p>
+            //   <p>Quantity: {item.quantity}</p>
+            //   <p>Price: ${item.product.price}</p>
+            // </li>
+            <CartItem
+              key={item.product.id} //item.product.id   index
+              product={item.product}
+              quantity={item.quantity}
+              onIncrement={() => updateQuantity(item.product.id, item.quantity + 1)}
+              onDecrement={() => updateQuantity(item.product.id, item.quantity - 1)}
+            />
+          ))}
+        </ul>
+        
+          <p><strong>Total: ${totalPrice.toFixed(2)}</strong></p>
+          <button >Continuar comprando</button>
+          <br></br>
+          <br></br>
+          <button onClick={() => {
+            console.log("Botón 'Ir a pagar' clickeado");
+            //setIsFormVisible(true);
+
+            // *** Desplazar la vista hacia el formulario
+            // if (formRef.current) {
+            //   formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Desplazarse suavemente
+            // }
+
+            // Cerrar el carrito
+            // toggleCartVisibility(); //*** Agregamos el cierre del carrito
+
+            // Mostrar el formulario de pago
+            // setIsFormVisible(true); //*** Mostramos el formulario
+
+            // setTimeout(() => {
+            //   if (formRef.current) {
+            //     formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Desplazarse suavemente
+            //   }
+            // }, 200); // *** Ajustar el tiempo si es necesario
+
+          }}>Ir a pagar</button>
+        
+      </div>
     </>
   )
 }
