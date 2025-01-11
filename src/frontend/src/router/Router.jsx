@@ -4,6 +4,7 @@ import Cart from "../pages/cart/Cart";
 import About from "../pages/about/About";
 import Login from "../pages/login/Login";
 import Contact from "../pages/contact/Contact";
+import Payment from "../pages/payment/Payment";
 
 const Router = () => {
     return (
@@ -14,6 +15,7 @@ const Router = () => {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} /> 
             <Route path="*" element={<h1>Not Fount - 404</h1>} />
+            <Route path="/payment" element={<Payment />} />
         </Routes>
     )
 }

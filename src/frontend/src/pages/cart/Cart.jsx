@@ -69,6 +69,7 @@ export const Cart = () => {
           <br></br>
           <button onClick={() => {
             console.log("Botón 'Ir a pagar' clickeado");
+            navigate("/payment");
             //setIsFormVisible(true);
 
             // *** Desplazar la vista hacia el formulario
