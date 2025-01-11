@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useCart } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
-
 import CartItem from "../../components/cart-item/cartitem";
 import styles from "./Cart.module.css";
+import { useNavigate } from "react-router-dom";
 import CartModal from "../../components/CartModal";
 
 export const Cart = () => {
@@ -15,6 +15,8 @@ export const Cart = () => {
   // Aquí accedemos al contexto de autenticación para obtener el identity
   const { identity, isAuthenticated } = useContext(AuthContext);  // Asegúrate de usar el contexto aquí
 
+  const navigate = useNavigate();
+  
   // Si no está logueado, muestra un mensaje de advertencia
   useEffect(() => {
     if (!isAuthenticated) {
@@ -38,7 +40,9 @@ export const Cart = () => {
       <div className={styles.cartmodal}>
         <div className={styles.cartheader}>
           <h2 className={styles.cartheaderh2}>Tu carrito</h2>
-          {<button className={styles.cartheaderbutton}>X</button>}
+          {<button 
+            className={styles.cartheaderbutton}
+            onClick={() => navigate("/")}>X</button>}
         </div>
         <ul className="cart-list">
           {cart.map((item) => (
@@ -60,7 +64,7 @@ export const Cart = () => {
         </ul>
         
           <p><strong>Total: ${totalPrice.toFixed(2)}</strong></p>
-          <button >Continuar comprando</button>
+          <button onClick={() => navigate("/")}>Continuar comprando</button>
           <br></br>
           <br></br>
           <button onClick={() => {
