@@ -26,8 +26,6 @@ const Form = () => {
         message: null,
     })
 
-
-
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -46,7 +44,6 @@ const Form = () => {
         const validatorError = Validator(formData);
         setErrors(validatorError);
 
-
         if (Object.values(validatorError).some((error) => error)) {
             return;
         }
@@ -64,7 +61,14 @@ const Form = () => {
                     <form className={styles.formContainer} onSubmit={handleSubmit}>
                         <div className={styles.formGroup} >
                             <label htmlFor="name">Nombre: </label>
-                            <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} data-testid="name" role="name"/>
+                            <input 
+                            type="text" 
+                            name="name" 
+                            id="name" 
+                            value={formData.name} 
+                            onChange={handleChange} 
+                            data-testid="name" 
+                            role="name"/>
                             {errors.name && <p className={styles.error}>{errors.name}</p>}
                         </div>
                         <div className={styles.formGroup} >

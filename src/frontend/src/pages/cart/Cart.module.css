@@ -21,6 +21,28 @@ cart-header*/
     text-align: center; /* Asegura que el texto esté centrado*/
 }
 
+.cartNonModal {
+  position: static;
+  width: 100%;
+  max-height: none;
+  box-shadow: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+}
+
+.totalText {
+  margin: 10px 0;
+  text-align: center; /* Centra el texto específicamente */
+}
+
+.centeredButton {
+  margin: 10px auto;
+  display: block; /* Centra el botón como un elemento de bloque */
+}
+
 .cartheader { 
     display: flex; 
     justify-content: center; 

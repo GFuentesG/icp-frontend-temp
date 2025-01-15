@@ -1,38 +1,91 @@
+.paymentPage {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px; /* Espaciado entre las columnas */
+}
+
+.cartContainer {
+  flex: 1;
+  max-width: 60%; /* Limita el tamaño del carrito */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* .paymentContainer {
+  max-width: 60px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+} */
+
 .paymentContainer {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  .paymentForm label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-  
-  .paymentForm input,
-  .paymentForm textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .paymentForm button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .paymentForm button:hover {
-    background-color: #0056b3;
-  }
-  
+  flex: 1;
+  max-width: 40%; /* Limita el tamaño de los detalles de pago */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+
+
+.paymentForm label {
+  font-weight: bold;
+  margin-bottom: 8px; /* Separación entre el label y el input */
+  font-size: 1.1rem; /* Tipo de letra ajustado */
+  color: #333; /* Color del texto */
+}
+
+.paymentForm input,
+.paymentForm textarea {
+  width: 100%;
+  padding: 12px; /* Espaciado interno del input */
+  margin-bottom: 20px; /* Separación entre el input y el siguiente elemento */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem; /* Tamaño del texto en los campos */
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.paymentForm input:focus,
+.paymentForm textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Efecto visual al enfocarse */
+}
+
+.paymentForm button {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem; /* Tamaño de texto ajustado */
+  cursor: pointer;
+  /* margin-top: 20px; */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.paymentForm button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.paymentForm button:active {
+  transform: translateY(1px);
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.9rem; /* Tamaño de fuente del error */
+  margin-top: -12px; /* Separación entre el error y el input */
+  margin-bottom: 16px; /* Espaciado uniforme con el siguiente elemento */
+}

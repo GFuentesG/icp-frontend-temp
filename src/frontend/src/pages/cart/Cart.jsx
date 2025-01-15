@@ -6,7 +6,7 @@ import styles from "./Cart.module.css";
 import { useNavigate } from "react-router-dom";
 import CartModal from "../../components/CartModal";
 
-export const Cart = () => {
+export const Cart = ({isModal = true}) => {
 
   const { cart, isLoading, addToCart, removeFromCart, updateQuantity } = useCart();
 
@@ -37,12 +37,14 @@ export const Cart = () => {
   return (
     <>
       {/* <CartModal /> */}
-      <div className={styles.cartmodal}>
+      <div className={isModal ? styles.cartmodal : styles.carnomodal}>
         <div className={styles.cartheader}>
           <h2 className={styles.cartheaderh2}>Tu carrito</h2>
-          {<button 
+          {isModal && (
+            <button 
             className={styles.cartheaderbutton}
-            onClick={() => navigate("/")}>X</button>}
+            onClick={() => navigate("/")}>X</button>
+            )}
         </div>
         <ul className="cart-list">
           {cart.map((item) => (
@@ -63,11 +65,15 @@ export const Cart = () => {
           ))}
         </ul>
         
-          <p><strong>Total: ${totalPrice.toFixed(2)}</strong></p>
-          <button onClick={() => navigate("/")}>Continuar comprando</button>
+          <p  className={styles.totalText}><strong>Total: ${totalPrice.toFixed(2)}</strong></p>
+          <button 
+          className={styles.centeredButton}
+          onClick={() => navigate("/")}>Continuar comprando</button>
           <br></br>
           <br></br>
-          <button onClick={() => {
+          {isModal && (
+            <button 
+            onClick={() => {
             console.log("Botón 'Ir a pagar' clickeado");
             navigate("/payment");
             //setIsFormVisible(true);
@@ -90,6 +96,7 @@ export const Cart = () => {
             // }, 200); // *** Ajustar el tiempo si es necesario
 
           }}>Ir a pagar</button>
+          )}
         
       </div>
     </>
